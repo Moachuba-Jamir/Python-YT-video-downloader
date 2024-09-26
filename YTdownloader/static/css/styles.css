@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.videoDetails {
+  background-color: rgba(191, 120, 209, 0.238);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 2%;
+  width: 23%;
+  transition: 300ms all ease-in;
+  -webkit-transition: 300ms all ease-in;
+  -moz-transition: 300ms all ease-in;
+  -ms-transition: 300ms all ease-in;
+  -o-transition: 300ms all ease-in;
+}
+
+.videoDetails:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+  -webkit-transform: scale(1.02);
+  -moz-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  -o-transform: scale(1.02);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.loading {
+  height: 300px !important;
+  width: auto !important;
+  margin-top: 5%;
+  border-radius: 20%;
+  -webkit-border-radius: 20%;
+  -moz-border-radius: 20%;
+  -ms-border-radius: 20%;
+  -o-border-radius: 20%;
+}
+.myTitle {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 1%;
+}
+
+strong {
+  font-size: 1.2rem;
+  font-family: "Playwrite DE Grund", cursive;
+}
+.details {
+  font-family: "Montserrat", sans-serif;
+    word-wrap: break-word;
+}
+
+.status {
+  background-color: rgba(74, 174, 127, 0.243);
+  padding: 1%;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+}
+input[type="url"] {
+  width: 300px;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+a{
+  text-decoration: none;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  form,
+  .videoDetails {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .myTitle {
+    font-size: 1rem;
+  }
+
+  strong {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  body {
+    padding: 5px;
+  }
+
+  form,
+  .videoDetails {
+    padding: 0px;
+    margin-inline: 3%;
+  }
+  .videoDetails{
+    margin-top: 3%;
+  }
+
+ 
+
+  input[type="url"],
+  input[type="submit"] {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .loading {
+    width: 100%;
+  }
+}

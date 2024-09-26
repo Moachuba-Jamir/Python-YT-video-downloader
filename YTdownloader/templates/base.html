@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube downloader Free</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/styles.css' %}"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 class="myTitle">Free youtube video downloader for Odi Akhum</h1>
+      <form action="{% url 'get_url' %}" method="post" id="myForm">
+        {% csrf_token %}
+        <input
+          type="url"
+          name="url_input"
+          placeholder="Paste your YouTube link here to download"
+          required
+        />
+        <input type="submit" value="Download" />
+      </form>
+
+      {%if video_info %}
+      <div class="videoDetails">
+        <h2><strong>Details</strong></h2>
+        <h2 class="status"><strong>Download Complete</strong></h2>
+        <p class="details"><strong>Title: </strong>{{video_info.title}}</p>
+        <p class="details">
+          <strong>Channel:</strong>
+          <a href="{{video_info.url}}"> {{video_info.channel}}</a>
+        </p>
+        <p class="details">
+          {% if video_info.description != "" %}
+          <strong>Description:</strong> {{video_info.description}} {% else %}
+          <strong>Description:</strong> No video Description was found from the
+          link you provided. {% endif %}
+        </p>
+        {% endif %}
+
+        <div class="downloading" style="display: none">
+          <img
+            class="loading"
+            src="{% static 'assets/loading.gif' %}"
+            alt="Loading"
+          />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var downloadStatus = document.querySelector(".downloading");
+      var isDownloading = false;
+      const form = document.getElementById("myForm");
+      form.addEventListener("submit", (e) => {
+  
+        // Check if video_info is present on page load
+        if ("{{ video_info }}" != "" ) {
+          downloadStatus.style.display = "none";
+        }  else {
+          downloadStatus.style.display = "block";
+        }
+      });
+    </script>
+    {% comment %}
+    <script src="{% static 'js/script.js' %}"></script>
+    {% endcomment %}
+  </body>
+</html>
